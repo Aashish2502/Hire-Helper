@@ -1,7 +1,7 @@
-# Hire-Helper
+# Hire-Help
 
 👋 Hi!
-I'm Hire Helper, your AI assistant 🤖, assisting you with screening the candidates.
+I'm Hire Help, your AI assistant 🤖, assisting you with screening the candidates.
 
 ### Steps to use:
 - Create a directory on your local machine.
