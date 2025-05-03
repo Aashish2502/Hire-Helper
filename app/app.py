@@ -6,8 +6,8 @@ from utils.embeddings import create_vector_embeddings
 from utils.history import history_aware
 
 os.environ["LANGSMITH_PROJECT"]='HR-Assistant'
-os.environ["LANGSMITH_ENDPOINT"]=os.getenv("LANGSMITH_ENDPOINT")
-os.environ["LANGSMITH_TRACING"]=os.getenv("LANGSMITH_TRACING")
+os.environ["LANGSMITH_ENDPOINT"]="true"
+os.environ["LANGSMITH_TRACING"]="https://api.smith.langchain.com"
 
 
 from langchain_groq import ChatGroq
@@ -21,11 +21,15 @@ st.title("Hire Helper")
 st.text("Hello there, I'm your AI Hire Helper, and would be assisting you with the profile scanning of the candidates")
 
 st.sidebar.title("Settings")
-api_key = st.sidebar.text_input("Enter your GROQ Api Key", type="password")
+groq_api_key = st.sidebar.text_input("Enter your GROQ Api Key", type="password")
+hf_api_key = st.sidebar.text_input("Enter your HuggingFace API Key", type="password")
+ls_api_key = st.sidebar.text_input("Enter your Langsmith API Key", type="password")
 
+os.environ['HF_API_KEY'] = hf_api_key
+os.environ['LANGSMITH_API_KEY'] = ls_api_key
 
-if api_key:
-    llm = ChatGroq(model="gemma2-9b-it", api_key=api_key)
+if groq_api_key and hf_api_key and ls_api_key:
+    llm = ChatGroq(model="gemma2-9b-it", api_key=groq_api_key)
 
     session_id = st.sidebar.text_input("Session ID", value="default_session")
 
