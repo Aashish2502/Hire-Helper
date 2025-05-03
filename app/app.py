@@ -17,7 +17,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 
 
 
-st.title("Hire Helper")
+st.title("Hire Help")
 st.text("Hello there, I'm your AI Hire Helper, and would be assisting you with the profile scanning of the candidates")
 
 st.sidebar.title("Settings")
