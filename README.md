@@ -11,7 +11,7 @@ I'm Hire Helper, your AI assistant 🤖, assisting you with screening the candid
   ```
   git clone https://github.com/Aashish2502/Hire-Helper
   
-  `python -m venv venv
+  python -m venv venv
 
   .\venv\Scripts\activate
 
